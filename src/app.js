@@ -1,27 +1,21 @@
-import express from "express"
-import bodyParser from "body-parser"
-import Logger from './loaders/logger'
-
-const app = express()
+import express from 'express'
+import bodyParser from 'body-parser'
+import LoggerInstance from './loaders/logger'
 
 const port = process.env.PORT
 
-app.use(bodyParser.json())
+const app = express()
+  .use(bodyParser.json())
+  .use(LoggerInstance)
 
-app.get("/", (req, res) => {
-  res.send("Hello Babel")
+app.get('/', (req, res) => {
+  res.status(200).send('Hello Babel')
 })
 
 app.listen(port, (err) => {
   if (err) {
-    console.log ("eita")
-    Logger.error(err);
-    process.exit(1);
-    return;
+    console.log(err)
+    process.exit(1)
   }
-  Logger.info(`
-    ################################################
-        🛡️  Server listening on port: ${port} 🛡️ 
-    ################################################
-  `);
+  console.log(`\n ## Serving in port ${port}\n`)
 })

@@ -22,12 +22,16 @@
     "cors": "^2.8.5",
     "env-cmd": "^10.1.0",
     "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "moment-timezone": "^0.5.31",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "winston": "^3.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/node": "^7.10.3",
-    "@babel/preset-env": "^7.10.3"
+    "@babel/preset-env": "^7.10.3",
+    "standard": "^14.3.4"
   }
 }

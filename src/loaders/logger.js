@@ -1,33 +1,8 @@
-import winston from 'winston'
+import morgan from 'morgan'
+import moment from 'moment-timezone'
 
-const transports = [];
-if(process.env.NODE_ENV !== 'development') {
-  transports.push(
-    new winston.transports.Console()
-  )
-} else {
-  transports.push(
-    new winston.transports.Console({
-      format: winston.format.combine(
-        winston.format.cli(),
-        winston.format.splat(),
-      )
-    })
-  )
-}
+morgan.token('date', (req, res, tz) => {
+  return moment().tz('America/Fortaleza').format('YYYY-MM-DD HH:mm')
+})
 
-const LoggerInstance = winston.createLogger({
-  level: 'info',
-  levels: winston.config.npm.levels,
-  format: winston.format.combine(
-    winston.format.timestamp({
-      format: 'YYYY-MM-DD HH:mm:ss'
-    }),
-    winston.format.errors({ stack: true }),
-    winston.format.splat(),
-    winston.format.json()
-  ),
-  transports
-});
-
-export default LoggerInstance;
+export default morgan('[:date] :method :url  (:status)  :response-time ms')
