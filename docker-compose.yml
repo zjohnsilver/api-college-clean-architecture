@@ -1,0 +1,11 @@
+version: '3.0'
+
+services:
+  api:
+    build: .
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 7000:7000
+    command: npm start

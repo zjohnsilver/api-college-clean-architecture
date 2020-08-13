@@ -1,23 +1,33 @@
 {
-  "name": "tcc-api-college",
+  "name": "api-express-docker",
   "version": "1.0.0",
-  "description": "Project for TCC",
+  "description": "Express API with docker",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "env-cmd nodemon --exec babel-node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zjohnsilver/tcc-api-college.git"
+    "url": "git+https://github.com/zjohnsilver/api-express-docker.git"
   },
   "author": "John Silver",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zjohnsilver/tcc-api-college/issues"
+    "url": "https://github.com/zjohnsilver/api-express-docker/issues"
   },
-  "homepage": "https://github.com/zjohnsilver/tcc-api-college#readme",
+  "homepage": "https://github.com/zjohnsilver/api-express-docker#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/preset-env": "^7.10.3"
   }
 }

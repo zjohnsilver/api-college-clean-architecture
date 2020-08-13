@@ -1,0 +1,2 @@
+export { LoggerInstance } from './logger'
+
