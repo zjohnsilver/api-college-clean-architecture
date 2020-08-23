@@ -1,6 +1,7 @@
 import 'module-alias/register'
+import env from './config/env'
 
 (async () => {
   const app = (await import('./config/app')).default
-  app.listen(3000, () => console.log('Server running'))
+  app.listen(env.port, () => console.log(`Server running in port ${env.port}`))
 })()
