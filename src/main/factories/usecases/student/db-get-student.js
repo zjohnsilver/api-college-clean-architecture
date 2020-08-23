@@ -1,7 +1,7 @@
 import { StudentRepository } from '@/infra/database/postgresql/student/student-repository'
-import { DbGetStudent } from '@/data/usecases/student/db-get-student'
+import { DbStudent } from '@/data/usecases/student/db-student'
 
 export const makeDbGetStudent = () => {
   const studentRepository = new StudentRepository()
-  return new DbGetStudent(studentRepository)
+  return new DbStudent(studentRepository)
 }
