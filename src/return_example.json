@@ -1,0 +1,12 @@
+{
+  "students": [
+    {
+      "matriculation_id": "20159040476",
+      "name": "John Doe",
+      "enrollment_date": "2022-09-01",
+      "email": "johndoe@example.com",
+      "birthday": "2000-05-15",
+      "subjects": [{ "id": 1, "name": "Fundamentos de Programação" }]
+    }
+  ]
+}
